@@ -77,32 +77,32 @@ This is a dynamic e-commerce furniture website template built with Next.js, Type
 ### Here are some screenshots of the furniture website template:
 #### Short Overveiw: 
 - Home Page:
-![App Screenshot](/public/homePage.PNG)
+![App Screenshot](./public/homePage.PNG)
 
 
 - Shop Page:
-![App Screenshot](/public/ShopPage.PNG)
+![App Screenshot](./public/ShopPage.PNG)
 
 - Blog Page:
-![App Screenshot](/public/BlogPage.PNG)
+![App Screenshot](./public/BlogPage.PNG)
 
 - Cart Page:
-![App Screenshot](/public/CartPage.PNG)
+![App Screenshot](./public/CartPage.PNG)
 
 - CheckOut Page: 
-![App Screenshot](/public/CheckOutPage.PNG)
+![App Screenshot](./public/CheckOutPage.PNG)
 
 - WhishList Page:
-![App Screenshot](/public/wishListPage.PNG)
+![App Screenshot](./public/wishListPage.PNG)
 
 - Contact Page:
-![App Screenshot](/public/ContactPage.PNG)
+![App Screenshot](./public/ContactPage.PNG)
 
 - ProductDetail Page:
-![App Screenshot](/public/dynamicRounting.PNG)
+![App Screenshot](./public/dynamicRounting.PNG)
 
 - OrderTracking Page:
-![App Screenshot](/public/OrderTrackingPage.PNG)
+![App Screenshot](./public/OrderTrackingPage.PNG)
 
  - Integration with Sanity CMS.
 - Sorting products by price (low to high, high to low).
