@@ -6,13 +6,16 @@ import Footer from './Footer'
 import Pagination from './Pagination'
 import Turn from './Turn'
 import Home from '../Home'
+import Search from './Search'
 
 export default function Shop() {
   return (
     <div>
         <Header/>
+       
         
-        <div className=" mt-[80px]">
+        {/* <div className=" mt-[80px]"> */}
+        <div>
       {/* Hero Section */}
       <div
         className="bg-cover bg-center h-56 flex items-center justify-center"

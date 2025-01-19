@@ -9,6 +9,7 @@ import Footer from '@/app/component/Footer';
 
 export default function ProductDetail({ params }: { params: { id: string } }) {
   const [cart, setCart] = useState<Product[]>([]);
+const [wishlist, setWishlist] = useState<Product[]>([]);
   const [product, setProduct] = useState<any>(null);
 
   // Fetch product details
@@ -36,12 +37,14 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
   }, [params.id]); // Dependency ensures this runs only when params.id changes
 
   // Initialize cart from localStorage
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const savedCart = JSON.parse(localStorage.getItem('cart') || '[]');
-      setCart(savedCart);
-    }
-  }, []); // Runs once when the component mounts
+useEffect(() => {
+  if (typeof window !== 'undefined') {
+    const savedCart = JSON.parse(localStorage.getItem('cart') || '[]');
+    setCart(savedCart);
+    const savedWishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+    setWishlist(savedWishlist);
+  }
+}, []); // Runs once when the component mounts
 
   if (!product) return <p>Loading...</p>;
 
@@ -55,6 +58,15 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
     console.log("Cart Updated: ", updatedCart);
   };
 
+//  Add item to wishlist
+ const addToWishlist = (product: { id: string; name: string; img: string; price: string; description: string }) => {
+  const updatedWishlist = [...wishlist, product];
+  setWishlist(updatedWishlist);
+  if (typeof window !== 'undefined') {
+    localStorage.setItem('wishlist', JSON.stringify(updatedWishlist));
+  }
+  console.log("Wishlist Updated: ", updatedWishlist);
+};
   return (
    <div>
   <Header/>
@@ -147,51 +159,56 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
         >
           Add To Cart
         </button></Link> 
-        
-                  <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
-                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-5 h-5" viewBox="0 0 24 24">
-                      <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
-                    </svg>
-                  </button>
+ <button 
+onClick={() => {
+  addToWishlist(product); // Add product to wishlist
+  alert(`${product.name} has been added to your wishlist!`); // Show alert
+}}
+className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4"
+>
+<svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-5 h-5" viewBox="0 0 24 24">
+  <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
+</svg>
+</button> 
                 </div>
-              </div>
+               </div>
             </div>
-          </div>
-        </section>
+           </div>
+         </section>
         
         
         <hr />
-        <div className="p-9">
-          {/* Tab Section */}
-          <div className="flex flex-col md:flex-row md:justify-center gap-4 md:gap-9 text-center">
-            <h1 className="underline font-bold text-[24px] md:text-[30px]">Description</h1>
-            <h1 className="text-[24px] md:text-[30px]">Additional information</h1>
-            <h1 className="text-[24px] md:text-[30px]">Reviews</h1>
-          </div>
+         <div className="p-9">
+           {/* Tab Section */}
+           <div className="flex flex-col md:flex-row md:justify-center gap-4 md:gap-9 text-center">
+             <h1 className="underline font-bold text-[24px] md:text-[30px]">Description</h1>
+             <h1 className="text-[24px] md:text-[30px]">Additional information</h1>
+             <h1 className="text-[24px] md:text-[30px]">Reviews</h1>
+           </div>
         
-          {/* Text Content */}
+           {/* Text Content */}
           <div className="text p-4 text-gray-500 text-sm md:text-base leading-relaxed">
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum dolorum ea blanditiis
-              deleniti labore perferendis minus doloribus ducimus eveniet. Tenetur ipsa officia labore ex
-              pariatur numquam odio deserunt, praesentium deleniti! Dignissimos iste illo, dolore aliquam
-              magnam ipsum nihil illum.
-              <br />
-              <br />
-              Labore eos cupiditate, ipsum vero voluptatibus officiis. Libero harum ducimus quod voluptate
-              alias beatae, voluptatum, provident, obcaecati iste cumque numquam reprehenderit? In,
-              delectus provident placeat, ei enim recusandae voluptatem dolorum et vero? Ullam dolore
-              repellendus animi obcaecati totam dolorem consectetur id sapiente modi quam? Eius ipsum
-              minima amet! Nihil distinctio hic sunt pariatur fugiat tenetur Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Minima maiores nobis quae esse. Error maxime ex dolorum itaque
-              reprehenderit dignissimos mollitia incidunt omnis. Labore dolore dolorem perferendis
-              officiis suscipit debitis!
-            </p>
-          </div>
+             <p>
+               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum dolorum ea blanditiis
+               deleniti labore perferendis minus doloribus ducimus eveniet. Tenetur ipsa officia labore ex
+               pariatur numquam odio deserunt, praesentium deleniti! Dignissimos iste illo, dolore aliquam
+               magnam ipsum nihil illum.
+               <br />
+               <br />
+               Labore eos cupiditate, ipsum vero voluptatibus officiis. Libero harum ducimus quod voluptate
+               alias beatae, voluptatum, provident, obcaecati iste cumque numquam reprehenderit? In,
+               delectus provident placeat, ei enim recusandae voluptatem dolorum et vero? Ullam dolore
+               repellendus animi obcaecati totam dolorem consectetur id sapiente modi quam? Eius ipsum
+               minima amet! Nihil distinctio hic sunt pariatur fugiat tenetur Lorem ipsum dolor sit amet
+               consectetur adipisicing elit. Minima maiores nobis quae esse. Error maxime ex dolorum itaque
+               reprehenderit dignissimos mollitia incidunt omnis. Labore dolore dolorem perferendis
+               officiis suscipit debitis!
+             </p>
+           </div>
         
-          {/* Image Section */}
+           {/* Image Section */}
           <div className="flex flex-wrap justify-center gap-4 md:gap-9 mt-8">
-            <div className="w-[250px]  md:w-[400px] md:h-[400px]">
+             <div className="w-[250px]  md:w-[400px] md:h-[400px]">
               <Image
                src={product.image.asset.url}
                 width={400}
@@ -208,24 +225,39 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
                 alt="hello"
                 className=" object-cover"
               />
-            </div>
+             </div>
           </div>
-        </div>
+         </div>
         <br /><br /><br />
         
         <Footer/>
         
-        </div> 
-  );
-}
+       </div> 
+   );
+ }
 
-interface Product {
-  id: string;
-  name: string;
+ interface Product {
+   id: string;
+   name: string;
   img: string;
-  price: string;
-  description: string;
-}
+   price: string;
+ description: string;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

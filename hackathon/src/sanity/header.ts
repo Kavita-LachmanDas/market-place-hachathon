@@ -47,6 +47,7 @@ export  const header = {
                     { title: 'Search', value: 'BiSearch' },
                     { title: 'Heart', value: 'BiHeart' },
                     { title: 'Cart', value: 'BiCart' },
+                    { title: 'truck', value: 'FaTruck' },
                   ],
                 },
                 validation: (Rule: { required: () => any; }) => Rule.required(),
