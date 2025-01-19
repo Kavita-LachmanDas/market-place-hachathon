@@ -199,7 +199,7 @@ export default function CartPage() {
       </div>
 
       {/* Cart Items Section */}
-      <div className="min-h-screen flex justify-center items-center">
+      <div className="min-h-screen flex justify-center items-center relative top-[-90px]">
         <div className="w-11/12 max-w-5xl rounded-lg p-5 flex flex-col lg:flex-row gap-5">
           <div className="flex-1 overflow-x-auto">
             {cart.length === 0 ? (
