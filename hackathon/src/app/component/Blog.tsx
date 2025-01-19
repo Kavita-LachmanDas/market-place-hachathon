@@ -213,7 +213,7 @@ export default function Blog() {
     <div className="overflow-x-hidden">
       <Header />
 
-      <div className="mt-[80px]">
+      <div>
         {/* Hero Section */}
         <div
           className="bg-cover bg-center h-56 flex items-center justify-center"

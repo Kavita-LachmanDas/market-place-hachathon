@@ -51,7 +51,7 @@ export default function Contact() {
   return (
     <div>
       <Header />
-      <div className="mt-[80px]">
+      <div>
         {/* Hero Section */}
         <div
           className="bg-cover bg-center h-56 flex items-center justify-center"
