@@ -12,6 +12,7 @@ import Follow from './component/Follow'
 import ViewAllPostsLink from './component/Veiwallpost'
 // import Home from './Home'
 import Card4 from './component/Card4'
+// import ShippingRatesPage from './component/Shipping'
 // import Card2 from './component/Card2'
 
 
@@ -57,6 +58,10 @@ export default  function page() {
 
 
 {/* <Card2 img={''} para={''} price={''}/> */}
+
+
+{/* <ShippingRatesPage/> */}
+
 
     </div>
   )
