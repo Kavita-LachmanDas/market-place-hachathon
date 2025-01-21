@@ -4,8 +4,8 @@
 // import Turn from "./Turn";
 
 import Link from "next/link";
-import Footer from "./Footer";
-import Header from "./Header";
+// import Footer from "./Footer";
+// import Header from "./Header";
 import Pagination from "./Pagination";
 import Turn from "./Turn";
 
@@ -211,7 +211,7 @@ export default function Blog() {
 
   return (
     <div className="overflow-x-hidden">
-      <Header />
+      {/* <Header /> */}
 
       <div>
         {/* Hero Section */}
@@ -312,7 +312,7 @@ export default function Blog() {
 
       <Turn />
       <Pagination />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

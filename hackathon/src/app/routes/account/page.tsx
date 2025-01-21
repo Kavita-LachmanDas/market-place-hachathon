@@ -1,5 +1,5 @@
-import Footer from '@/app/component/Footer'
-import Header from '@/app/component/Header'
+// import Footer from '@/app/component/Footer'
+// import Header from '@/app/component/Header'
 import MyAccount from '@/app/component/MyAccount'
 import Pagination from '@/app/component/Pagination'
 import React from 'react'
@@ -7,7 +7,7 @@ import React from 'react'
 export default function page() {
   return (
     <div>
-        <Header/>
+        {/* <Header/> */}
         <div>
       {/* Hero Section */}
       <div
@@ -27,7 +27,7 @@ export default function page() {
         <MyAccount/>
 
         <Pagination/>
-<Footer/>
+{/* <Footer/> */}
     </div>
   )
 }

@@ -68,16 +68,16 @@ import { useState } from 'react';
 import { MdCheckCircle } from 'react-icons/md'; // For Order Placed
 import { FaTruck } from 'react-icons/fa'; // For Shipped
 import { AiOutlineCheckCircle } from 'react-icons/ai'; // For Delivered
-import Header from './Header';
-import Footer from './Footer';
+// import Header from './Header';
+// import Footer from './Footer';
 
 export default function OrderTracking() {
   const [orderId, setOrderId] = useState<string>('');
 
   return (
     <div>
-        <Header/>
-    <div className="max-w-md mx-auto p-6 bg-gray-200 rounded-lg shadow-lg my-10">
+        {/* <Header/> */}
+    <div className="max-w-md mx-auto p-6  rounded-lg shadow-lg my-10 ">
       <h1 className="text-3xl font-semibold text-center text-gray-800 mb-6">Track Your Order</h1>
       
       <div className="mb-6">
@@ -132,7 +132,7 @@ export default function OrderTracking() {
       </div>
     </div>
 
-    <Footer/>
+    {/* <Footer/> */}
     </div>
   );
 }

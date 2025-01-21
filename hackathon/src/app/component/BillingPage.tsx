@@ -288,8 +288,8 @@
 
 'use client'
 import { useState, useEffect } from 'react';
-import Footer from "./Footer";
-import Header from "./Header";
+// import Footer from "./Footer";
+// import Header from "./Header";
 import Pagination from "./Pagination";
 
 interface Product {
@@ -358,7 +358,7 @@ export default function BillingPage() {
 
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
 
       <div >
         {/* Hero Section */}
@@ -546,7 +546,7 @@ export default function BillingPage() {
         </div>
 
         <Pagination />
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   );

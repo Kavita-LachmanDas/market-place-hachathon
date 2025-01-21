@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react';
-import Header from './Header';
+// import Header from './Header';
 
 export default function Wishlist() {
   const [wishlist, setWishlist] = useState<Product[]>([]);
@@ -21,7 +21,7 @@ export default function Wishlist() {
 
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <div className="max-w-7xl mx-auto p-8">
         <h1 className="text-3xl font-bold text-center mb-8">Your Wishlist</h1>
         {wishlist.length === 0 ? (
@@ -54,6 +54,7 @@ export default function Wishlist() {
 }
 
 interface Product {
+  [x: string]: any;
   id: string;
   name: string;
   img: string;

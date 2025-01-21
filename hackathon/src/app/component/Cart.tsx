@@ -113,8 +113,8 @@
 
 'use client';
 import { useState, useEffect } from 'react';
-import Header from './Header';
-import Footer from './Footer';
+// import Header from './Header';
+// import Footer from './Footer';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -183,7 +183,7 @@ export default function CartPage() {
 
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
 
       {/* Hero Section */}
       <div
@@ -216,9 +216,9 @@ export default function CartPage() {
                       height={300}
                     />
                     <div>
-                      <h2 className="text-lg font-semibold">{product.name}</h2>
-                      <p className="text-gray-500">Price: Rs. {product.price}</p>
-                      <p className="text-gray-500">Quantity: {product.quantity}</p>
+                      <h2 className="text-lg font-semibold ml-5">{product.name}</h2>
+                      <p className="text-gray-500 ml-5">Price: Rs. {product.price}</p>
+                      <p className="text-gray-500 ml-5">Quantity: {product.quantity}</p>
                     </div>
                     <div className="flex items-center gap-2">
                       <button
@@ -266,7 +266,7 @@ export default function CartPage() {
         </div>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

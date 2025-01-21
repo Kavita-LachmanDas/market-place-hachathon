@@ -1,25 +1,25 @@
 import React from 'react'
 import Hero from './component/Hero'
-import Header from './component/Header'
+// import Header from './component/Header'
 import Card from './Card'
 import NextCard from './component/NextCard'
 
 import Same from './component/Same'
 import Card3 from './component/Card3'
-import Link from 'next/link'
+// import Link from 'next/link'
 import Follow from './component/Follow'
-import Footer from './component/Footer'
+// import Footer from './component/Footer'
 import ViewAllPostsLink from './component/Veiwallpost'
-import Home from './Home'
+// import Home from './Home'
 import Card4 from './component/Card4'
-import Card2 from './component/Card2'
+// import Card2 from './component/Card2'
 
 
 export default  function page() {
  
   return (
     <div>
-      <Header/>
+      {/* <Header/> */}
       <Hero/>
       <div className="flex flex-col sm:flex-row justify-center gap-6  bg-[#FAF4F4]">
       {/* <Card img='/img1.png' name='Side Table' veiw='View More'/>
@@ -52,7 +52,7 @@ export default  function page() {
 <ViewAllPostsLink/>
 
 <Follow/>
-<Footer/>
+{/* <Footer/> */}
 
 
 

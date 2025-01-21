@@ -1,11 +1,11 @@
 
 'use client'
-import Header from '@/app/component/Header';
+// import Header from '@/app/component/Header';
 import { client } from '@/sanity/lib/client';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import Footer from '@/app/component/Footer';
+// import Footer from '@/app/component/Footer';
 
 export default function ProductDetail({ params }: { params: { id: string } }) {
   const [cart, setCart] = useState<Product[]>([]);
@@ -69,7 +69,7 @@ useEffect(() => {
 };
   return (
    <div>
-  <Header/>
+  {/* <Header/> */}
     
 <section className="text-gray-600 body-font overflow-hidden">
   <div className="container px-5 py-24 mx-auto">
@@ -230,7 +230,7 @@ className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-cen
          </div>
         <br /><br /><br />
         
-        <Footer/>
+        {/* <Footer/> */}
         
        </div> 
    );
